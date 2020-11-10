@@ -25,7 +25,7 @@ jobs:
         run: cd matrix && make clean
        
       - name: build project files
-        run: cd matrix && make
+        run: cd matrix && make test_mmult
       
       - name: create release
         uses: actions/create-release@v1
