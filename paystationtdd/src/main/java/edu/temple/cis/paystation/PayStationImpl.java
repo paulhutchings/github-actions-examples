@@ -43,8 +43,11 @@ public class PayStationImpl implements PayStation {
     }
 
     private int insertedSoFar(){
-        // Convert the values of the Map to a stream and use Integer.sum() in a reduce function to get the total
-        return coins.values().stream().reduce(0, Integer::sum);
+        int sum = 0;
+        for (Map.Entry<Integer, Integer> entry : coins.entrySet()){
+            sum += entry.getKey() * entry.getValue();
+        }
+        return sum;
     }
 
     private int timeBought(){
